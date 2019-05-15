@@ -14,7 +14,32 @@
             "id": 3,
             "name": "France",
             "visa_required": false
+        },
+        {
+            "id": 4,
+            "name": "New Orleans",
+            "visa_required": false
+        },
+        {
+            "id": 5,
+            "name": "Wisconsin",
+            "visa_required": false
         }
     ],
-    "interests": []
+    "interests": [
+        {
+            "id": 1,
+            "placeId": 1,
+            "name": "Local Market",
+            "description": "Local Market where you can try to purchase fresh produce",
+            "review": " "
+        },
+        {
+            "id": 2,
+            "placeId": 3,
+            "name": "Eifel Tower",
+            "description": "Big show piece.  Guaranteed to get giga likes",
+            "review": " "
+        }
+    ]
 }
