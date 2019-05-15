@@ -32,7 +32,7 @@
             "placeId": 1,
             "name": "Local Market",
             "description": "Local Market where you can try to purchase fresh produce",
-            "review": " ",
+            "review": "",
             "cost": "0.00"
         },
         {
@@ -40,7 +40,7 @@
             "placeId": 3,
             "name": "Eifel Tower",
             "description": "Big show piece.  Guaranteed to get giga likes",
-            "review": " ",
+            "review": "Basic bitches be here.",
             "cost": "0.00"
         }
     ]

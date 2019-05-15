@@ -1,5 +1,6 @@
 import APIManager from "./dbCalls";
 import API from "./APICall";
+import domBuilder from "./domBuilder"
 
 let placesURL =  "http://localhost:8088/places"
 
@@ -13,3 +14,10 @@ let allPlaces = API.getAll(placesURL)
 
 console.log("What the fuuuuuck?")
 console.log(allPlaces, "what the fuck?")
+
+
+const test = API.getOne(placesURL, 1)
+console.log(test)
+
+domBuilder.outPut();
+

@@ -9,13 +9,16 @@ const API =  {
             })
 
     },
-    getOne: function(url, Id) {
+    getOne: function (url, Id) {
         return fetch(`${url}/${Id}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }).then(response => response.json())
+          .then(parsedResults => {
+            return parsedResults
+          });
     },
     save: function (url, object) {
         return fetch(url, {
