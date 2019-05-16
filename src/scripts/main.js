@@ -22,4 +22,5 @@ console.log(test)
 
 console.log("WHO?")
 domBuilder.outPut();
+domBuilder.input();
 

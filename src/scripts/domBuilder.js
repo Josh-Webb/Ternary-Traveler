@@ -24,9 +24,7 @@ const domBuilder = {
                 let ID = interest.id
                 let output = document.getElementById("output")
 
-                let addInterestBtn = document.createElement("button");
-                addInterestBtn.textContent = "Add a New Fun Thing To Do"
-                output.appendChild(addInterestBtn)
+                
 
                 let card = document.createElement("div")
                 card.setAttribute("id", `interest${ID}`)
@@ -48,6 +46,8 @@ const domBuilder = {
                 let cost = document.createElement("h5")
                 cost.textContent = interest.cost
                 card.appendChild(cost)
+
+                
 
                 let editBtn = document.createElement("button")
                 editBtn.textContent = "Adjust Cost and Put in Your Review. :)"
@@ -79,7 +79,69 @@ const domBuilder = {
     clearDom(){
         let output = document.getElementById("output")
         output.innerHTML = ""
-    }
+    },
+    input(){
+        let inputContainer = document.getElementById("input");
+
+        // create form HTML elements
+        let newInterestDiv = document.createElement("div");
+        let newInterestName = document.createElement("input");
+        newInterestName.placeholder = "Where are we going?"
+        let newInterestDescription = document.createElement("input");
+        newInterestDescription.placeholder = "What's gonna be there?"
+        let newInterestCost = document.createElement("input");
+        newInterestCost.placeholder = "What's your expected budget there?"
+        let saveInterestButton = document.createElement("button");
+        saveInterestButton.classList.add("btn-outline-info")
+        let location = document.createElement("select")
+
+                let locationOption1 = document.createElement("option")
+                locationOption1.setAttribute("Italy", "1")
+
+                let locationOption2 = document.createElement("option")
+                locationOption2.setAttribute("Switzerland", "2")
+
+                let locationOption3 = document.createElement("option")
+                locationOption3.setAttribute("France", "3")
+
+                // let locationOption4 = document.createElement("option")
+                // locationOption4.setAttribute("New Orleans", "4")
+
+                let locationOption5 = document.createElement("option")
+                locationOption5.setAttribute("Wisconsin", "5")
+
+                
+                saveInterestButton.textContent = "Save It!"
+        // add class to form container
+        newInterestDiv.classList.add("add--interest--form");
+        saveInterestButton.classList.add("interest--save--button");
+        newInterestName.classList.add("new--interest--name");
+        newInterestDescription.classList.add("new--interest--description");
+        newInterestCost.classList.add("new--interest--cost");
+        saveInterestButton.addEventListener("click", call.addToAPI(), false)
+
+        // add text to button
+
+        // define input attributes
+        newInterestName.setAttribute("type", "text");
+        newInterestDescription.setAttribute("type", "text");
+        newInterestCost.setAttribute("type", "text");
+
+        // append input fields to the form container
+        newInterestDiv.appendChild(newInterestName);
+        location.appendChild(locationOption1)
+        location.appendChild(locationOption2)
+        location.appendChild(locationOption3)
+        // newInterestDiv.appendChild(locationOption4)
+        location.appendChild(locationOption5)
+        newInterestDiv.appendChild(location)
+        newInterestDiv.appendChild(newInterestDescription);
+        newInterestDiv.appendChild(newInterestCost);
+        newInterestDiv.appendChild(saveInterestButton);
+
+        // append form container to event container (temporarily)
+        inputContainer.appendChild(newInterestDiv);
+    } 
                      
              
     }
