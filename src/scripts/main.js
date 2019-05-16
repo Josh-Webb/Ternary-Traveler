@@ -19,5 +19,7 @@ console.log(allPlaces, "what the fuck?")
 const test = API.getOne(placesURL, 1)
 console.log(test)
 
+
+console.log("WHO?")
 domBuilder.outPut();
 
