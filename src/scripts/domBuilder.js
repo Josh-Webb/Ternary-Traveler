@@ -1,5 +1,20 @@
 import API from "./APICall"
 
+
+
+// const clearDom = () => {
+//     document.getElementById("output").innerHTML = "";
+// }
+
+function getConfirmation(ID) {
+    var retVal = confirm("Do you want to continue ?");
+    if( retVal === true ) {
+         API.delete("http://localhost:8088/interests", ID)
+         .then(location.reload(forcedReload))
+    }
+ }
+
+
 const domBuilder = {
     outPut() {
         API.getAll("http://localhost:8088/interests")
@@ -20,7 +35,9 @@ const domBuilder = {
                 card.appendChild(name)
                
                 let deleteBtn = document.createElement("button")
+                deleteBtn.classList.add(`deleteBtn${ID}`)
                 deleteBtn.textContent = "Out with the Old!"
+                deleteBtn.addEventListener("click", function(){getConfirmation(ID)});
                 card.appendChild(deleteBtn)
                 
                 let description = document.createElement("h4")
