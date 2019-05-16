@@ -1,4 +1,5 @@
 import API from "./APICall"
+import call from "./calls"
 
 
 
@@ -6,13 +7,13 @@ import API from "./APICall"
 //     document.getElementById("output").innerHTML = "";
 // }
 
-function getConfirmation(ID) {
-    var retVal = confirm("Do you want to continue ?");
-    if( retVal === true ) {
-         API.delete("http://localhost:8088/interests", ID)
-         .then(location.reload(forcedReload))
-    }
- }
+// function getConfirmation(ID) {
+//     var retVal = confirm("Do you want to continue ?")
+//     if( retVal === true ) {
+//          API.delete("http://localhost:8088/interests", ID)
+//          domReset()
+//     }
+//  };
 
 
 const domBuilder = {
@@ -37,7 +38,7 @@ const domBuilder = {
                 let deleteBtn = document.createElement("button")
                 deleteBtn.classList.add(`deleteBtn${ID}`)
                 deleteBtn.textContent = "Out with the Old!"
-                deleteBtn.addEventListener("click", function(){getConfirmation(ID)});
+                deleteBtn.addEventListener("click", function(){call.getConfirmation(ID)});
                 card.appendChild(deleteBtn)
                 
                 let description = document.createElement("h4")
@@ -74,10 +75,15 @@ const domBuilder = {
                 })
                 )
 
+    },
+    clearDom(){
+        let output = document.getElementById("output")
+        output.innerHTML = ""
     }
                      
              
     }
 
+;
 
 export default domBuilder
