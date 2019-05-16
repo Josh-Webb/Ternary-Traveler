@@ -1,9 +1,10 @@
 import domBuilder from "./domBuilder"
 
 
-const domReset = () => {
+
+const domReset = (nothing) => {
     domBuilder.clearDom()
-    .then(domBuilder.outPut());
+    .then (domBuilder.outPut(nothing));
 }
 
 export default domReset

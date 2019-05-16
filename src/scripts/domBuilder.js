@@ -1,5 +1,6 @@
 import API from "./APICall"
 import call from "./calls"
+import domReset from "./resetDom"
 
 
 
@@ -76,10 +77,6 @@ const domBuilder = {
                 )
 
     },
-    clearDom(){
-        let output = document.getElementById("output")
-        output.innerHTML = ""
-    },
     input(){
         let inputContainer = document.getElementById("input");
 
@@ -93,35 +90,39 @@ const domBuilder = {
         newInterestCost.placeholder = "What's your expected budget there?"
         let saveInterestButton = document.createElement("button");
         saveInterestButton.classList.add("btn-outline-info")
-        let location = document.createElement("select")
+        // let location = document.createElement("select")
+        
+        //         let locationOption1 = document.createElement("option")
+        //         locationOption1.setAttribute("value", 1)
+        //         locationOption1.textContent("Italy")
+        
+        //         let locationOption2 = document.createElement("option")
+        //         locationOption2.setAttribute("value", 2)
+        //         locationOption2.textContent("Switzerland")
+        
+        //         let locationOption3 = document.createElement("option")
+        //         locationOption3.setAttribute("value", 3)
+        //         locationOption3.textContent("New Orleans")
+        
+        //         // let locationOption4 = document.createElement("option")
+        //         // locationOption4.setAttribute("New Orleans", "4")
 
-                let locationOption1 = document.createElement("option")
-                locationOption1.setAttribute("Italy", "1")
-
-                let locationOption2 = document.createElement("option")
-                locationOption2.setAttribute("Switzerland", "2")
-
-                let locationOption3 = document.createElement("option")
-                locationOption3.setAttribute("France", "3")
-
-                // let locationOption4 = document.createElement("option")
-                // locationOption4.setAttribute("New Orleans", "4")
-
-                let locationOption5 = document.createElement("option")
-                locationOption5.setAttribute("Wisconsin", "5")
-
-                
-                saveInterestButton.textContent = "Save It!"
-        // add class to form container
+        //         let locationOption5 = document.createElement("option")
+        //         locationOption5.setAttribute("value", 5)
+        //         locationOption5.textContent("Wisconsin")
+        
+        
+        saveInterestButton.textContent = "Save It!"
+        
         newInterestDiv.classList.add("add--interest--form");
         saveInterestButton.classList.add("interest--save--button");
         newInterestName.classList.add("new--interest--name");
         newInterestDescription.classList.add("new--interest--description");
         newInterestCost.classList.add("new--interest--cost");
-        saveInterestButton.addEventListener("click", call.addToAPI(), false)
-
+        saveInterestButton.addEventListener("click", call.addToAPI)
+        
         // add text to button
-
+        
         // define input attributes
         newInterestName.setAttribute("type", "text");
         newInterestDescription.setAttribute("type", "text");
@@ -129,21 +130,25 @@ const domBuilder = {
 
         // append input fields to the form container
         newInterestDiv.appendChild(newInterestName);
-        location.appendChild(locationOption1)
-        location.appendChild(locationOption2)
-        location.appendChild(locationOption3)
-        // newInterestDiv.appendChild(locationOption4)
-        location.appendChild(locationOption5)
-        newInterestDiv.appendChild(location)
+        // location.appendChild(locationOption1)
+        // location.appendChild(locationOption2)
+        // location.appendChild(locationOption3)
+        // // newInterestDiv.appendChild(locationOption4)
+        // location.appendChild(locationOption5)
+        // newInterestDiv.appendChild(location)
         newInterestDiv.appendChild(newInterestDescription);
         newInterestDiv.appendChild(newInterestCost);
         newInterestDiv.appendChild(saveInterestButton);
-
+        
         // append form container to event container (temporarily)
         inputContainer.appendChild(newInterestDiv);
-    } 
-                     
-             
+    } ,
+            clearDom(nothing){
+                let output = document.getElementById("output");
+                output.innerHTML = nothing
+            }
+    
+    
     }
 
 ;
